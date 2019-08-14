@@ -63,7 +63,7 @@ for functional in ${General_Directory}/Project/$subject/Session_$session/scan*/*
 		ColDir=Red-Green
 	fi
 
-	output_directory=${output_dir}/${ColDir}_scan_${counter}_2Contrasts
+	output_directory=${output_dir}/${ColDir}_scan_${counter}_Response_2Contrasts
 	
 # makes a copy for each scan of a template fsf file which we will edit.
 	cp ${General_Directory}/First_Level_Analysis_Files/FSF_Template.fsf ${output_dir}/$fsf_file
