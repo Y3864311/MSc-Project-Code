@@ -4,6 +4,8 @@ os.environ['SUBJECTS_DIR'] = '/usr/share/freesurfer-data/subjects'
 import glob
 from os.path import join
 
+General_Directory = '/home/o/ofh502/Project/Fourth_Level_3CX'
+
 Hemisphere = 'lh'
 Viewpoint = ["lateral", "medial", "parietal", "ventral"]
 C1_Col = 'Reds'
@@ -28,7 +30,7 @@ for i, x in enumerate(light_settings):
 	light.azimuth = x['azimuth'] # set azimuth
 	light.intensity = x['intensity'] # set intensity
     
-Inflated_Brain_Files = sorted(glob.glob('/home/o/ofh502/Project/Fourth_Level_3CX/Inflated_Brains/FullThresh_ByContrast3CX/*/*{}.mgh'.format(Hemisphere)))
+Inflated_Brain_Files = sorted(glob.glob('{}/Inflated_Brains/FullThresh_ByContrast3CX/*/*{}.mgh'.format(General_Directory, Hemisphere)))
 
 for File_Dir in Inflated_Brain_Files:
     overlay = surfer.io.read_scalar_data(File_Dir)
