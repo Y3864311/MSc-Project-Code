@@ -14,7 +14,7 @@ echo "Generating FSF Files..."
 counter=10
 
 fsf_file=$( echo Group_thirdlevel_2Contrasts.fsf )
-output_dir=$( echo ${General_Directory}/Project/ThirdLevel_2Contrasts)
+output_dir=$( echo ${General_Directory}/ThirdLevel_2Contrasts)
 
 cp ${General_Directory}/Third_Level_Analysis_Files/FSF_Template_thirdlevel_2Contrasts.fsf ${output_dir}/$fsf_file
 
