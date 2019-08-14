@@ -4,7 +4,7 @@ os.environ['SUBJECTS_DIR'] = '/usr/share/freesurfer-data/subjects'
 import glob
 from os.path import join
 
-General_Directory = '/home/o/ofh502/Project/Fourth_Level_3CX'
+General_Directory = ''
 
 Hemisphere = 'lh'
 Viewpoint = ["lateral", "medial", "parietal", "ventral"]
