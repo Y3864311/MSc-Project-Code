@@ -16,12 +16,12 @@ general_miss = []
 general_cr = []
 general_fa = []     
 
-ZeroResponseParfilesDir = sorted(glob("/home/o/ofh502/Project/noResponseCoded0ParFiles/*/*/*.par"))
+ZeroResponseParfilesDir = sorted(glob("/home/*/*/*/noResponseCoded0ParFiles/*/*/*.par"))
 #files = sorted(glob("/home/o/ofh502/Downloads/noResponseCoded0ParFiles/noResponseCoded0ParFiles/*/*/*.par"))
 
 
 OnlyResponseDir_List = []
-for Response in glob("/home/o/ofh502/Project/parFilesERDesignStim_ordered/*/*/*.par"):
+for Response in glob("/home/*/*/*/parFilesERDesignStim_ordered/*/*/*.par"):
     OnlyResponseDir_List.append(Response)
 #print(sorted(OnlyResponse_List))
 
