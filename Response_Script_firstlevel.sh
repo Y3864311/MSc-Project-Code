@@ -23,16 +23,16 @@ for functional in ${General_Directory}/Project/$subject/Session_$session/scan*/*
 	###############Registration###############
 
 	#For each scan, transforms 1 volume of the functional data into t1 space
-	#flirt -in ${functional} -ref ${t1} -out ${General_Directory}/$subject/Session_$session/scan_${counter}/examplefunc_2_t1 -cost mutualinfo -dof 6 -searchrx -5 5 -searchry -5 5 -searchrz -5 5 -omat /	${General_Directory}/$subject/Session_$session/scan_${counter}/examplefunc_2_t1_matrix -v 
+	flirt -in ${functional} -ref ${t1} -out ${General_Directory}/$subject/Session_$session/scan_${counter}/examplefunc_2_t1 -cost mutualinfo -dof 6 -searchrx -5 5 -searchry -5 5 -searchrz -5 5 -omat /	${General_Directory}/$subject/Session_$session/scan_${counter}/examplefunc_2_t1_matrix -v 
 
 
 	#Applies the above transformation into t1 space to the rest of the scan's data, reducing the processing time
-	#flirt -in ${functional} -ref ${t1} -out ${General_Directory}/$subject/Session_$session/scan_${counter}/func_2_t1 -applyxfm -init ${General_Directory}/$subject/Session_$session/scan_${counter}/examplefunc_2_t1_matrix -v 
+	flirt -in ${functional} -ref ${t1} -out ${General_Directory}/$subject/Session_$session/scan_${counter}/func_2_t1 -applyxfm -init ${General_Directory}/$subject/Session_$session/scan_${counter}/examplefunc_2_t1_matrix -v 
 
 	func_2_t1=$( echo ${General_Directory}/$subject/Session_$session/scan_${counter}/func_2_t1 ) 
 
 	#Applies the FNIRT transformation onto the functional data now in t1 space
-	#applywarp -i ${func_2_t1} -o ${General_Directory}/$subject/Session_$session/scan_${counter}/func_2_MNI -r ${standard_brain} -w ${General_Directory}/$subject/Structural/highres2standard_warp.nii.gz -v
+	applywarp -i ${func_2_t1} -o ${General_Directory}/$subject/Session_$session/scan_${counter}/func_2_MNI -r ${standard_brain} -w ${General_Directory}/$subject/Structural/highres2standard_warp.nii.gz -v
 
 	func_2_MNI=$( echo ${General_Directory}/$subject/Session_$session/scan_${counter}/func_2_MNI)
 	
@@ -92,7 +92,7 @@ done
 echo "Submitting FSF files to cluster..."
 
 #submits all fsf files to the cluster.
-#for fsf in ${General_Directory}/$subject/Session_$session/*/R*Response2Contrasts.fsf ; do
-#	clusterFeat $fsf
-#done
+for fsf in ${General_Directory}/$subject/Session_$session/*/R*Response2Contrasts.fsf ; do
+	clusterFeat $fsf
+done
 echo "Done"
