@@ -12,13 +12,13 @@ session="1"
 t1=$( echo ${General_Directory}/${subject}/Structural/*YNICT1A.nii.gz)
 standard_brain=$( echo /usr/share/fsl/data/standard/MNI152_T1_2mm.nii.gz )
 #Previously applied FNIRT transformation conducted by FEAT on the t1 image into standard space
-t1_2_MNI=$( echo ${General_Directory}/Project/${subject}/Structural/t1_2_MNI.nii.gz) 
+t1_2_MNI=$( echo ${General_Directory}/${subject}/Structural/t1_2_MNI.nii.gz) 
 
 echo "Generating FSF Files..."
 counter=1
 
 
-for functional in ${General_Directory}/Project/$subject/Session_$session/scan*/*FMRI*.nii.gz ; do
+for functional in ${General_Directory}/$subject/Session_$session/scan*/*FMRI*.nii.gz ; do
 
 	###############Registration###############
 
