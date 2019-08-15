@@ -15,7 +15,6 @@ echo "Generating FSF Files..."
 counter=1
 
 #Iterates through the first-level feat directories
-#Both chromatic colours have hyphen in their folder name therefore can use this to identify them
 for feat in ${General_Directory}/${subject}/Session_$session/scan_${scan}/*SC.feat ; do
 	#echo ${feat}
 	Scan_Name=$(basename ${feat})
