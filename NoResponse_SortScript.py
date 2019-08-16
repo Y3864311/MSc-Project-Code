@@ -10,6 +10,8 @@ General_Directory = ""
 # 5-8 = S [M H CR FA]
 # 9-12 = LM [M H CR FA]
 
+Subject = ""
+
 general_hit = []
 general_miss = []
 general_cr = []
@@ -37,7 +39,8 @@ for ZRP_Dir in ZeroResponseParfilesDir:
     hit = []
     miss = []
     cr = []
-    fa = []     
+    fa = [] 
+    nr = [] 
 
     if "ColDir1" in ZRP_Dir:
         
