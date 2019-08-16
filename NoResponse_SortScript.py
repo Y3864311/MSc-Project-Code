@@ -15,13 +15,14 @@ Subject = ""
 general_hit = []
 general_miss = []
 general_cr = []
-general_fa = []     
+general_fa = [] 
 
-ZeroResponseParfilesDir = sorted(glob("{}/noResponseCoded0ParFiles/R5265/20190503/*.par".format(General_Directory)))
+
+ZeroResponseParfilesDir = sorted(glob("{}/noResponseCoded0ParFiles/{}/*/*.par".format(General_Directory, Subject)))
 
 
 OnlyResponseDir_List = []
-for Response in glob("{}/parFilesERDesignStim_ordered/R5265/20190503/*.par".format(General_Directory)):
+for Response in glob("{}/parFilesERDesignStim_ordered/{}/*/*.par".format(General_Directory, Subject)):
     OnlyResponseDir_List.append(Response)
 #print(sorted(OnlyResponse_List))
 
@@ -40,7 +41,6 @@ for ZRP_Dir in ZeroResponseParfilesDir:
     miss = []
     cr = []
     fa = [] 
-    nr = [] 
 
     if "ColDir1" in ZRP_Dir:
         
